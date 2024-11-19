@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resultado</title>
+</head>
+<body>
+    <h1>Resultado do Cálculo Trabalhista</h1>
+    <div id="resultado"></div>
+  
+    <button onclick="voltar()">Voltar para o cálculo</button>
+
+    <script>
+        function voltar() {
+            window.location.href = "cal.html"; 
+        }
+
+        
+        const resultado = localStorage.getItem('registrar');
+        document.getElementById('resultado').innerHTML = resultado || "Nenhum resultado disponível.";
+    </script>
+</body>
+</html>

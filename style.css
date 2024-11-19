@@ -1,0 +1,236 @@
+/* RESETAR CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/* VARIÁVEIS CSS */
+:root {
+    --text-color: #f5f5f5;
+    --hover-color: #9412ff;
+    --bg-color: #292e33;
+    --second-bg-color: #080808;
+    --big-font: 2.5rem;
+    --normal-font: 2rem;
+    --neon-box-shadow: 0 0 0.5rem #9412ff;
+    --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 150px rgba(18, 247, 255, 0.3);
+}
+
+/* ESTILO DO CORPO */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* LINKS */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+span {
+    color: var(--hover-color);
+    
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--second-bg-color);
+    height: 80px;
+    padding: 0 8%;
+    box-shadow: var(--neon-box-shadow);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+}
+
+.logo {
+    font-size: 1.4rem;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.bx-menu {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* MENU MOBILE */
+@media (max-width: 820px) {
+    nav {
+        padding-inline: 5%;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        background-color: var(--bg-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    nav ul li:first-child {
+        padding-top: 10px;
+    }
+
+    nav ul li:last-child {
+        padding-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon.active {
+        display: block;
+    }
+    
+    nav ul.active {
+        max-height: 300px;
+        transition: max-height 0.5s ease-in-out;
+    }
+}
+
+/* SEÇÃO GERAL */
+.section-box {
+    margin: 20px auto; /* Reduz o espaçamento entre as caixas */
+    padding: 30px; /* Ajuste no padding para mais proximidade */
+    max-width: 1000px;
+    background-color: var(--second-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover nas caixas */
+.section-box:hover {
+    transform: translateY(-5px); /* Eleva a caixa levemente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais profunda */
+}
+
+/* TÍTULOS DAS SEÇÕES */
+.section-box h2 {
+    font-size: 2rem;
+    color: var(--hover-color);
+    margin-bottom: 15px; /* Menor espaçamento para coesão */
+}
+
+/* PARÁGRAFOS DAS SEÇÕES */
+.section-box p {
+    text-align: justify; /* Alinhamento justificado */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    margin-bottom: 15px;
+}
+
+/* LINKS NAS SEÇÕES */
+.section-box a {
+    color: var(--hover-color);
+    text-decoration: underline;
+    transition: color 0.3s ease; /* Transição para cor do link */
+}
+
+.section-box a:hover {
+    color: #ff4747; /* Muda cor em hover */
+}
+
+/* SEÇÃO DO PORTFÓLIO */
+section.portifolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #ffffff21;
+    margin-top: 60px;
+    border: none;
+}
+
+section.portifolio .flex {
+    justify-content: space-around;
+}
+
+.img-port {
+    width: 400px;
+    height: 460px;
+    background-position: 100% 0;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+    transition: background-position 0.8s;
+    background-repeat: no-repeat;
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+/* OVERLAY DO PORTFÓLIO */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000070;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background-repeat: no-repeat;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/* HEADING DAS SEÇÕES */
+.heading {
+    text-align: justify;
+      /* Corrigido para variável definida */
+}
+h2
+{
+    
+        color: var(--hover-color);
+     
+}
