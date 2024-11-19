@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <div id="jj"> 
+        <h1>Calculadora IMC</h1>
+
+        <strong><label>Nome</label></strong>
+        <input type="text" id="nomeid" name="nome"><br>
+
+        <br><strong><label for="peso">Peso (kg):</label></strong>
+        <input type="number" placeholder="EX: 90" id="pesoid" name="peso"><br>
+
+        <br><strong><label for="altura">Altura (m):</label></strong>
+        <input type="number" placeholder="EX: 1.80" id="alturaid" name="altura"><br>
+
+        <div id="bu">
+            <h3>Escolha em qual gênero calcular</h3>
+            <br>
+            <button onclick="masculino()">Masculino</button>
+            <button onclick="feminino()">Feminino</button>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>
